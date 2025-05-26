@@ -1,0 +1,63 @@
+{{ define "main" }}
+<div class="container">
+    <header class="header">
+        <h1>{{ .Title }}</h1>
+        {{ if .Description }}
+        <p>{{ .Description }}</p>
+        {{ end }}
+    </header>
+
+    {{ if .Content }}
+    <section>
+        {{ .Content }}
+    </section>
+    {{ end }}
+
+    <section>
+        {{ if eq .Kind "section" }}
+            {{ $paginator := .Paginate (where .Pages "Type" .Type) }}
+            {{ range $paginator.Pages }}
+            <div class="card">
+                <h2 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                {{ if .Date }}
+                <p class="date">Published on {{ .Date.Format "January 2, 2006" }}</p>
+                {{ end }}
+                {{ if .Summary }}
+                <p>{{ .Summary }}</p>
+                {{ if .Truncated }}
+                <a href="{{ .RelPermalink }}" class="btn">Read More</a>
+                {{ end }}
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ if gt $paginator.TotalPages 1 }}
+            <div class="pagination">
+                {{ if $paginator.HasPrev }}
+                <a href="{{ $paginator.Prev.URL }}" class="btn btn-outline">Previous</a>
+                {{ end }}
+                
+                {{ if $paginator.HasNext }}
+                <a href="{{ $paginator.Next.URL }}" class="btn btn-outline">Next</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        {{ else }}
+            {{ range .Pages }}
+            <div class="card">
+                <h2 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                {{ if .Date }}
+                <p class="date">Published on {{ .Date.Format "January 2, 2006" }}</p>
+                {{ end }}
+                {{ if .Summary }}
+                <p>{{ .Summary }}</p>
+                {{ if .Truncated }}
+                <a href="{{ .RelPermalink }}" class="btn">Read More</a>
+                {{ end }}
+                {{ end }}
+            </div>
+            {{ end }}
+        {{ end }}
+    </section>
+</div>
+{{ end }}

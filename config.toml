@@ -1,0 +1,51 @@
+baseURL = "https://cod3rs.community/"
+languageCode = "en-us"
+title = "Cod3rs Community"
+theme = ""
+
+# Enable syntax highlighting
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+# Enable emoji support
+enableEmoji = true
+
+# Configure permalinks
+[permalinks]
+  blog = "/blog/:year/:month/:slug/"
+  
+# Menu configuration
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 3
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 4
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Params
+[params]
+  description = "A community of passionate developers working together to create amazing things"
+  author = "Cod3rs Community"
+  github = "https://github.com/cod3rs-community"
+  twitter = "https://twitter.com/cod3rs_community"
+  discord = "https://discord.gg/jZzVbN2gmA"

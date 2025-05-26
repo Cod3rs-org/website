@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .Title }}{{ .Title }} | {{ end }}Cod3rs Community</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/img/logo.png" alt="Logo" height="30">
+                Cod3rs Community
+            </a>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link {{ if .IsHome }}active{{ end }}" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ if eq .RelPermalink "/about/" }}active{{ end }}" href="/about/">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ if eq .RelPermalink "/projects/" }}active{{ end }}" href="/projects/">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ if eq .RelPermalink "/blog/" }}active{{ end }}" href="/blog/">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ if eq .RelPermalink "/contact/" }}active{{ end }}" href="/contact/">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Cod3rs Community is a vibrant group of passionate developers working together to create amazing things.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/projects/">Projects</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">GitHub</a>
+                        <a href="#" class="social-icon">Twitter</a>
+                        <a href="#" class="social-icon">LinkedIn</a>
+                        <a href="#" class="social-icon">Discord</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Cod3rs Community. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
