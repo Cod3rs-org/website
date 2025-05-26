@@ -177,6 +177,17 @@ section.alt {
   color: var(--secondary-color);
 }
 
+.btn-outline-custom {
+  background-color: transparent;
+  border: 3px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+}
+
 /* Footer */
 .footer {
   background-color: var(--primary-color);
