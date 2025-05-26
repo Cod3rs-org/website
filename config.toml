@@ -1,7 +1,7 @@
 baseURL = "https://cod3rs.community/"
 languageCode = "en-us"
 title = "Cod3rs Community"
-theme = ""
+theme = "custom"
 
 # Enable syntax highlighting
 pygmentsCodeFences = true
