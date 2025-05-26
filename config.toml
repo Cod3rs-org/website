@@ -47,6 +47,5 @@ enableEmoji = true
 [params]
   description = "A community of passionate developers working together to create amazing things"
   author = "Cod3rs Community"
-  github = "https://github.com/cod3rs-community"
-  twitter = "https://twitter.com/cod3rs_community"
+  github = "https://github.com/cod3rs-org"
   discord = "https://discord.gg/jZzVbN2gmA"
