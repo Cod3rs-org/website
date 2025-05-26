@@ -1,11 +1,14 @@
 {{ define "main" }}
-<div class="container">
-    <header class="header">
+<header class="header">
+    <div class="container">
         <h1>{{ .Title }}</h1>
         {{ if .Description }}
-        <p>{{ .Description }}</p>
+            <p>{{ .Description }}</p>
         {{ end }}
-    </header>
+    </div>
+</header>
+
+<div class="container">
 
     {{ if .Content }}
     <section>
@@ -36,7 +39,7 @@
                 {{ if $paginator.HasPrev }}
                 <a href="{{ $paginator.Prev.URL }}" class="btn btn-outline">Previous</a>
                 {{ end }}
-                
+
                 {{ if $paginator.HasNext }}
                 <a href="{{ $paginator.Next.URL }}" class="btn btn-outline">Next</a>
                 {{ end }}

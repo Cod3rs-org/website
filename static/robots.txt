@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cod3rs.community/sitemap.xml

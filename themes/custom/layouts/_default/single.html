@@ -1,11 +1,13 @@
 {{ define "main" }}
-<div class="container">
-    <header class="header">
+<header class="header">
+    <div class="container">
         <h1>{{ .Title }}</h1>
         {{ if .Date }}
-        <p class="date">Published on {{ .Date.Format "January 2, 2006" }}</p>
+            <p class="date">Published on {{ .Date.Format "January 2, 2006" }}</p>
         {{ end }}
-    </header>
+    </div>
+</header>
+<div class="container">
 
     <section>
         {{ .Content }}
