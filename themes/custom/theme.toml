@@ -1,0 +1,12 @@
+name = "Custom"
+license = "MIT"
+licenselink = "https://github.com/yourname/custom/blob/master/LICENSE"
+description = "A custom theme for Cod3rs Community"
+homepage = "https://cod3rs.community/"
+tags = ["responsive", "brutalist", "minimal"]
+features = ["responsive", "clean", "minimal"]
+min_version = "0.41.0"
+
+[author]
+  name = "Cod3rs Community"
+  homepage = "https://cod3rs.community/"
