@@ -17,6 +17,10 @@ body, html {
   color: var(--primary-color);
   background-color: var(--secondary-color);
   line-height: 1.6;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 /* Typography */
