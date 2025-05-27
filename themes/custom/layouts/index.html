@@ -72,31 +72,8 @@
             </div>
         </div>
     </section>
-    <nav class="navbar" aria-label="Main Navigation">
-        <div class="container">
-            <a class="navbar-brand" href="/" aria-label="Cod3rs Community Home">
-                <img src="/img/logo.png" alt="Cod3rs Community Logo" height="30">
-                Cod3rs Community
-            </a>
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/" aria-current="page">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about/">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/projects/">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/blog/">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact/">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+
+    {{ partial "navbar.html" . }}
 
     <header class="header">
         <div class="container">
@@ -171,36 +148,7 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="three-column">
-                <section aria-label="About Us">
-                    <h5>ABOUT US</h5>
-                    <p>Cod3rs Community is a vibrant group of passionate developers working together to create amazing things.</p>
-                </section>
-                <section aria-label="Quick Links">
-                    <h5>QUICK LINKS</h5>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about/">About</a></li>
-                        <li><a href="/projects/">Projects</a></li>
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/contact/">Contact</a></li>
-                    </ul>
-                </section>
-                <section aria-label="Connect With Us">
-                    <h5>CONNECT WITH US</h5>
-                    <div class="social-icons">
-                        <a href="https://github.com/cod3rs-org" class="social-icon" rel="noopener" target="_blank">GitHub</a>
-                        <a href="https://discord.gg/jZzVbN2gmA" class="social-icon" rel="noopener" target="_blank">Discord</a>
-                    </div>
-                </section>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Cod3rs Community. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    {{ partial "footer.html" . }}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
