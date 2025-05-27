@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .Title }}{{ .Title }} | {{ end }}Cod3rs Community</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
         <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="/img/logo.png" alt="Logo" height="30">
+            <a class="navbar-brand" href="/" aria-label="Cod3rs Community Home">
+                <img src="/img/logo.png" alt="Cod3rs Community Logo" height="30">
                 Cod3rs Community
             </a>
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a class="nav-link {{ if .IsHome }}active{{ end }}" href="/">Home</a>
+                    <a class="nav-link {{ if .IsHome }}active{{ end }}" href="/" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ if eq .RelPermalink "/about/" }}active{{ end }}" href="/about/">About</a>
+                    <a class="nav-link {{ if eq .RelPermalink "/about/" }}active{{ end }}" href="/about/" {{ if eq .RelPermalink "/about/" }}aria-current="page"{{ end }}>About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ if eq .RelPermalink "/projects/" }}active{{ end }}" href="/projects/">Projects</a>
+                    <a class="nav-link {{ if eq .RelPermalink "/projects/" }}active{{ end }}" href="/projects/" {{ if eq .RelPermalink "/projects/" }}aria-current="page"{{ end }}>Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ if eq .RelPermalink "/blog/" }}active{{ end }}" href="/blog/">Blog</a>
+                    <a class="nav-link {{ if eq .RelPermalink "/blog/" }}active{{ end }}" href="/blog/" {{ if eq .RelPermalink "/blog/" }}aria-current="page"{{ end }}>Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ if eq .RelPermalink "/contact/" }}active{{ end }}" href="/contact/">Contact</a>
+                    <a class="nav-link {{ if eq .RelPermalink "/contact/" }}active{{ end }}" href="/contact/" {{ if eq .RelPermalink "/contact/" }}aria-current="page"{{ end }}>Contact</a>
                 </li>
             </ul>
         </div>
