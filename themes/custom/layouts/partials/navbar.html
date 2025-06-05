@@ -1,25 +1,37 @@
-<nav class="navbar" aria-label="Main Navigation">
-    <div class="container">
-        <a class="navbar-brand" href="/" aria-label="Cod3rs Community Home">
-            <img src="/img/logo.png" alt="Cod3rs Community Logo" height="30">
-            Cod3rs Community
-        </a>
-        <ul class="nav-list">
-            <li class="nav-item">
-                <a class="nav-link {{ if .IsHome }}active{{ end }}" href="/" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ if eq .RelPermalink "/about/" }}active{{ end }}" href="/about/" {{ if eq .RelPermalink "/about/" }}aria-current="page"{{ end }}>About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ if eq .RelPermalink "/projects/" }}active{{ end }}" href="/projects/" {{ if eq .RelPermalink "/projects/" }}aria-current="page"{{ end }}>Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ if eq .RelPermalink "/blog/" }}active{{ end }}" href="/blog/" {{ if eq .RelPermalink "/blog/" }}aria-current="page"{{ end }}>Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ if eq .RelPermalink "/contact/" }}active{{ end }}" href="/contact/" {{ if eq .RelPermalink "/contact/" }}aria-current="page"{{ end }}>Contact</a>
-            </li>
-        </ul>
+<nav class="navbar w-100 px-5 py-2" aria-label="Main Navigation">
+    <div class="d-flex w-100">
+
+        <div class="col">
+
+            <div>
+                <h2 class="large rubik-mono-one-regular text-white">COD3RS</h2>
+            </div>
+            <div class="ps-4">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link {{ if .IsHome }}active{{ end }}" href="/" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ if eq .RelPermalink "/about/" }}active{{ end }}" href="/about/" {{ if eq .RelPermalink "/about/" }}aria-current="page"{{ end }}>About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ if eq .RelPermalink "/projects/" }}active{{ end }}" href="/projects/" {{ if eq .RelPermalink "/projects/" }}aria-current="page"{{ end }}>Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ if eq .RelPermalink "/blog/" }}active{{ end }}" href="/blog/" {{ if eq .RelPermalink "/blog/" }}aria-current="page"{{ end }}>Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ if eq .RelPermalink "/contact/" }}active{{ end }}" href="/contact/" {{ if eq .RelPermalink "/contact/" }}aria-current="page"{{ end }}>Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-auto d-none d-sm-flex align-items-end">
+            <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M200 0H0V20H165.858L4.15039 181.708L18.292 195.85L180 34.1426V200H200V0Z" fill="white"/>
+            </svg>
+        </div>
+
     </div>
 </nav>

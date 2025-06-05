@@ -52,47 +52,51 @@
     </script>
 </head>
 <body>
-    <section class="intro" aria-label="Introduction">
-        <div class="d-flex m-0 h-100">
-            <div class="col-md-7 d-flex align-items-center justify-content-end pe-5">
-                <div class="h-75">
-                    <img src="/img/large-logo.png" class="img-fluid d-inline-block" style="max-height:100%" alt="Cod3rs Community Logo" />
+    <div class="cod3rs mb-5">
+        <div class="vh-100 d-flex flex-column">
+            <div class="h-50 bg-prim w-100 d-flex align-items-start flex-column">
+                {{ partial "navbar.html" . }}
 
+                <div class="d-flex flex-column mt-auto px-5">
+                    <div>
+                        <h4 class="ps-4">A brutalist approach to coding and community building</h4>
+                    </div>
+                    <div class="d-flex justify-content-between justify-content-sm-start ">
+                        <div class="d-flex gap-4">
+                            <div>
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M45 27.9297L64.749 8.18066L71.8193 15.251L52.0703 35H80V45H52.0703L71.8193 64.749L64.749 71.8203L45 52.0713V80H35V52.0703L15.251 71.8203L8.18066 64.749L27.9287 45H0V35H27.9287L8.17969 15.251L15.251 8.18066L35 27.9297V0H45V27.9297Z" fill="#755AFB"/>
+                                </svg>
+                            </div>
+                            <div class="w-50 d-none d-sm-flex">
+                                <p>Cod3rs Community is a diverse group of developers, designers, and tech enthusiasts who share a passion for coding and technology.
+                                    We believe in the power of collaboration and knowledge sharing to create innovative solutions.</p>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <a href="/about/" class="btn btn-outline-custom" aria-label="Learn more about our community">LEARN MORE</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-5 d-flex align-items-center display-1">
-                <div class="d-flex flex-column justify-content-center h-100 rubik-mono-one-regular">
-                    <h2>BUILD CODE</h2>
-                    <h2 class="accent-color">HAVE FUN</h2>
-                    <h2>CREATE FUTURE</h2>
+
+            <div class="h-50 d-flex align-items-end justify-content-end">
+                <div class="d-flex display-1 pe-1 pe-sm-5 pb-2">
+                    <div class="d-flex flex-column justify-content-center h-100 rubik-mono-one-regular text-end text-white">
+                        <h2>BUILD CODE</h2>
+                        <h2 class="accent-color">HAVE FUN</h2>
+                        <h2>CREATE FUTURE</h2>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    {{ partial "navbar.html" . }}
-
-    <header class="header">
-        <div class="container">
-            <section class="hero-content" aria-label="Welcome Message">
-                <h1>WELCOME TO <span class="accent-color rubik-mono-one-regular">COD3RS</span> COMMUNITY</h1>
-                <p>A brutalist approach to coding and community building</p>
-                <a href="#about" class="btn btn-outline-custom" aria-label="Learn more about our community">LEARN MORE</a>
-            </section>
-        </div>
+    <header class="header" style="position: absolute; left: -9999px;">
+        <h1>WELCOME TO <span class="accent-color rubik-mono-one-regular">COD3RS</span> COMMUNITY</h1>
     </header>
 
     <main class="container">
-        <section id="about" aria-label="About Our Community">
-            <h2>ABOUT OUR COMMUNITY</h2>
-            <div class="two-column">
-                <article>
-                    <h3>WHO WE ARE</h3>
-                    <p>Cod3rs Community is a diverse group of developers, designers, and tech enthusiasts who share a passion for coding and technology.
-                        We believe in the power of collaboration and knowledge sharing to create innovative solutions.</p>
-                </article>
-            </div>
-        </section>
 
         <section id="features" class="d-none" aria-label="What We Offer">
             <h2>WHAT WE OFFER - WIP</h2>

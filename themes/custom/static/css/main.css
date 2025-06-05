@@ -7,7 +7,6 @@
   --primary-color: #212121; /* 60% - Dark gray/almost black */
   --secondary-color: #FFFFFF; /* 30% - White */
   --accent-color: #755AFB; /* 10% - Purple */
-
 }
 
 /* Base styles */
@@ -76,7 +75,14 @@ a:hover {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   height: 100vh;
+  border: 5px solid var(--primary-color);
   border-bottom: 10px solid var(--accent-color);
+}
+
+.cod3rs{
+  background-image: url("/img/Hackers-bg-Image.png");
+  background-size: cover;
+  background-position: center;
 }
 
 /* Navigation */
@@ -278,6 +284,20 @@ section.alt {
   .three-column {
     grid-template-columns: 1fr;
   }
+
+  h2.large{
+    font-size: 3rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  h2.large{
+    font-size: 9.75rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
 .rubik-mono-one-regular, .rubik-mono-one-regular * {
@@ -285,3 +305,9 @@ section.alt {
   font-weight: 400;
   font-style: normal;
 }
+
+.bg-prim {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
