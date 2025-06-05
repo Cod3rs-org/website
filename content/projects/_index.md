@@ -19,7 +19,7 @@ Our community website (the one you're looking at right now!) is an open-source p
 Interested in contributing to one of our projects? Here's how you can get involved:
 
 1. Join our [Discord server](https://discord.gg/jZzVbN2gmA) and introduce yourself in the #introductions channel
-2. Check out the #projects channel to see what we're currently working on
+2. Check out the #projects-collaboration channel to see what we're currently working on
 3. Attend one of our project meetings or coding sessions
 4. Pick a task from our issue tracker and start contributing
 
