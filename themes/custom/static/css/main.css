@@ -298,6 +298,7 @@ section.alt {
 }
 
 /* Responsive */
+
 @media (max-width: 768px) {
   h1 {
     font-size: 2.5rem;
@@ -340,9 +341,15 @@ section.alt {
   }
 }
 
-@media (max-width: 456px) {
+@media (max-width: 990px) {
   h2.large {
-    font-size: 1.5rem;
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 556px) {
+  h2.large {
+    font-size: 1.8rem;
   }
 }
 
@@ -356,3 +363,5 @@ section.alt {
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
+
+
