@@ -1,37 +1,46 @@
-<nav class="navbar w-100 px-5 py-2" aria-label="Main Navigation">
-    <div class="d-flex w-100">
+<nav class="navbar navbar-expand-md w-100 px-3 px-lg-5 py-2" aria-label="Main Navigation">
+    <div class="d-flex justify-content-between align-items-center w-100">
+            
+        <div class="d-flex flex-row flex-md-column justify-content-between flex-fill gap-2">
+            <h2 class="navbar-brand large rubik-mono-one-regular text-white m-0">COD3RS</h2>
+            <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="col">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                
+                <div class="offcanvas-header">
+                    <img src="\img\logo.png" alt="COD3RS Logo" class="img-fluid me-2 ms-2" width="70" height="70">
+                    <button type="button" class="btn-close me-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
 
-            <div>
-                <h2 class="large rubik-mono-one-regular text-white">COD3RS</h2>
+                <div class="offcanvas-body ms-2 z-3">
+                    <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link {{ if .IsHome }}active{{ end }}" href="/" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ if eq .RelPermalink "/about/" }}active{{ end }}" href="/about/" {{ if eq .RelPermalink "/about/" }}aria-current="page"{{ end }}>About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ if eq .RelPermalink "/projects/" }}active{{ end }}" href="/projects/" {{ if eq .RelPermalink "/projects/" }}aria-current="page"{{ end }}>Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ if eq .RelPermalink "/blog/" }}active{{ end }}" href="/blog/" {{ if eq .RelPermalink "/blog/" }}aria-current="page"{{ end }}>Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ if eq .RelPermalink "/contact/" }}active{{ end }}" href="/contact/" {{ if eq .RelPermalink "/contact/" }}aria-current="page"{{ end }}>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="ps-4">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a class="nav-link {{ if .IsHome }}active{{ end }}" href="/" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ if eq .RelPermalink "/about/" }}active{{ end }}" href="/about/" {{ if eq .RelPermalink "/about/" }}aria-current="page"{{ end }}>About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ if eq .RelPermalink "/projects/" }}active{{ end }}" href="/projects/" {{ if eq .RelPermalink "/projects/" }}aria-current="page"{{ end }}>Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ if eq .RelPermalink "/blog/" }}active{{ end }}" href="/blog/" {{ if eq .RelPermalink "/blog/" }}aria-current="page"{{ end }}>Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ if eq .RelPermalink "/contact/" }}active{{ end }}" href="/contact/" {{ if eq .RelPermalink "/contact/" }}aria-current="page"{{ end }}>Contact</a>
-                    </li>
-                </ul>
-            </div>
-
         </div>
-        <div class="col-auto d-none d-sm-flex align-items-end">
+
+        <div class="col-auto d-none d-lg-flex align-items-end">
             <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M200 0H0V20H165.858L4.15039 181.708L18.292 195.85L180 34.1426V200H200V0Z" fill="white"/>
             </svg>
         </div>
-
     </div>
 </nav>
