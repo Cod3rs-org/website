@@ -87,6 +87,7 @@ a:hover {
   background-image: url("/img/Hackers-bg-Image.png");
   background-size: cover;
   background-position: center;
+  min-height: 100vh;
 }
 
 /* Navigation */
@@ -343,7 +344,13 @@ section.alt {
 
 @media (max-width: 990px) {
   h2.large {
-    font-size: 4rem;
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 720px) {
+  h2.large {
+    font-size: 5rem;
   }
 }
 
@@ -364,4 +371,15 @@ section.alt {
   color: var(--secondary-color);
 }
 
-
+#spinning-svg {
+  animation: spinOnce .8s ease-in-out;
+}
+  
+@keyframes spinOnce {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
