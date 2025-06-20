@@ -57,39 +57,45 @@
 </head>
 <body>
     <div class="cod3rs mb-5">
-        <div class="vh-100 d-flex flex-column">
-            <div class="h-50 bg-prim w-100 d-flex align-items-start flex-column">
-                {{ partial "navbar.html" . }}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="bg-prim w-100 d-flex align-items-start justify-content-between flex-column mb-5">
+                    
+                    {{ partial "navbar.html" . }}
 
-                <div class="d-flex flex-column mt-auto px-5">
-                    <div>
-                        <h4 class="ps-4">A brutalist approach to coding and community building</h4>
-                    </div>
-                    <div class="d-flex justify-content-between justify-content-sm-start ">
-                        <div class="d-flex gap-4">
-                            <div>
-                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M45 27.9297L64.749 8.18066L71.8193 15.251L52.0703 35H80V45H52.0703L71.8193 64.749L64.749 71.8203L45 52.0713V80H35V52.0703L15.251 71.8203L8.18066 64.749L27.9287 45H0V35H27.9287L8.17969 15.251L15.251 8.18066L35 27.9297V0H45V27.9297Z" fill="#755AFB"/>
-                                </svg>
-                            </div>
-                            <div class="w-50 d-none d-sm-flex">
-                                <p>Cod3rs Community is a diverse group of developers, designers, and tech enthusiasts who share a passion for coding and technology.
-                                    We believe in the power of collaboration and knowledge sharing to create innovative solutions.</p>
-                            </div>
+                    <div class="d-flex flex-column px-3 px-lg-5">
+                        <div>
+                            <h4 class="ps-lg-4 ps-3 ps-lg-0 mb-0 mt-5">A brutalist approach to coding and community building</h4>
                         </div>
-                        <div class="col-auto">
-                            <a href="/about/" class="btn btn-outline-custom" aria-label="Learn more about our community">LEARN MORE</a>
+                        <div class="d-flex flex-row justify-content-between align-items-end my-5 gap-4 px-3 px-lg-0">
+                            <div class="d-flex flex-row gap-4">
+                                <div class="svg-container">
+                                    <svg id="spinning-svg" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M45 27.9297L64.749 8.18066L71.8193 15.251L52.0703 35H80V45H52.0703L71.8193 64.749L64.749 71.8203L45 52.0713V80H35V52.0703L15.251 71.8203L8.18066 64.749L27.9287 45H0V35H27.9287L8.17969 15.251L15.251 8.18066L35 27.9297V0H45V27.9297Z" fill="#755AFB"/>
+                                    </svg>
+                                </div>
+                                <div class="d-none d-md-flex w-50">
+                                    <p class="mb-md-0 mb-4">Cod3rs Community is a diverse group of developers, designers, and tech enthusiasts who share a passion for coding and technology.
+                                        We believe in the power of collaboration and knowledge sharing to create innovative solutions.</p>
+                                </div>
+                            </div>
+                            <div class="col-auto mt-lg-0">
+                                <a href="/about/" class="btn btn-outline-custom" aria-label="Learn more about our community">LEARN MORE</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="h-50 d-flex align-items-end justify-content-end">
-                <div class="d-flex display-1 pe-1 pe-sm-5 pb-2">
-                    <div class="d-flex flex-column justify-content-center h-100 rubik-mono-one-regular text-end text-white">
-                        <h2>BUILD CODE</h2>
-                        <h2 class="accent-color">HAVE FUN</h2>
-                        <h2>CREATE FUTURE</h2>
+            <div class="row">
+                <div class="d-flex align-items-end justify-content-end mt-2 mt-lg-2 pt-5 px-5">
+                    <div class="d-flex display-1 pb-2 mt-5 mt-lg-2">
+                        <div class="d-flex flex-column justify-content-center mt-5 mt-lg-2 rubik-mono-one-regular text-end text-white">
+                            <div class="mt-0 mt-lg-5">
+                                <h2>BUILD CODE</h2>
+                                <h2 class="accent-color">HAVE FUN</h2>
+                                <h2>CREATE FUTURE</h2>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,7 +107,6 @@
     </header>
 
     <main class="container">
-
         <section id="features" class="d-none" aria-label="What We Offer">
             <h2>WHAT WE OFFER - WIP</h2>
             <div class="three-column">
@@ -155,6 +160,16 @@
 
     {{ partial "footer.html" . }}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script>
+        function spinSVG() {
+            const svg = document.getElementById('spinning-svg');
+            svg.style.transform = 'rotate(0deg)';
+            svg.style.transition = 'transform 1s ease-in-out';
+            
+            setTimeout(() => {
+                svg.style.transform = 'rotate(360deg)';
+            }, 50);
+        }
+    </script>
 </body>
 </html>

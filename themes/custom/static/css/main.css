@@ -42,6 +42,10 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
+h2:last-of-type {
+  border-bottom: none;
+}
+
 h3 {
   font-size: 2rem;
 }
@@ -71,7 +75,7 @@ a:hover {
   padding: 0 15px;
 }
 
-.intro{
+.intro {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   height: 100vh;
@@ -79,10 +83,11 @@ a:hover {
   border-bottom: 10px solid var(--accent-color);
 }
 
-.cod3rs{
+.cod3rs {
   background-image: url("/img/Hackers-bg-Image.png");
   background-size: cover;
   background-position: center;
+  min-height: 100vh;
 }
 
 /* Navigation */
@@ -90,6 +95,42 @@ a:hover {
   background-color: var(--primary-color);
   padding: 1rem 0;
   margin-bottom: 2rem;
+}
+
+.navbar:active {
+  color: var(--accent-color);
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.offcanvas {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.btn-close {
+  color: var(--secondary-color);
+}
+
+.navbar-toggler {
+    background-color: transparent;
+    border: none;
+}
+
+.btn-close, .navbar-toggler-icon {
+    filter: invert(1);
+    opacity: 1;
+}
+
+.nav-link.active {
+    color: var(--accent-color) !important;
 }
 
 .navbar-brand {
@@ -257,39 +298,8 @@ section.alt {
   color: var(--accent-color);
 }
 
-/* Component Navigation */
-.component-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  position: sticky;
-  top: 0;
-  background-color: var(--secondary-color);
-  padding: 1rem 0;
-  z-index: 100;
-  border-bottom: 3px solid var(--primary-color);
-}
-
-.component-nav-btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  text-decoration: none;
-  border: none;
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.component-nav-btn:hover {
-  background-color: var(--accent-color);
-  color: var(--secondary-color);
-}
-
 /* Responsive */
+
 @media (max-width: 768px) {
   h1 {
     font-size: 2.5rem;
@@ -301,19 +311,6 @@ section.alt {
 
   h3 {
     font-size: 1.5rem;
-  }
-
-  .component-nav {
-    overflow-x: auto;
-    padding: 0.5rem 0;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-  }
-
-  .component-nav-btn {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-    white-space: nowrap;
   }
 
   .nav-list {
@@ -330,18 +327,36 @@ section.alt {
     grid-template-columns: 1fr;
   }
 
-  h2.large{
-    font-size: 3rem;
+  h2.large {
+    font-size: 2.5rem;
     margin-bottom: 0;
     padding-bottom: 0;
   }
 }
 
 @media (min-width: 769px) {
-  h2.large{
+  h2.large {
     font-size: 9.75rem;
     margin-bottom: 0;
     padding-bottom: 0;
+  }
+}
+
+@media (max-width: 990px) {
+  h2.large {
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 720px) {
+  h2.large {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 556px) {
+  h2.large {
+    font-size: 1.8rem;
   }
 }
 
@@ -354,4 +369,17 @@ section.alt {
 .bg-prim {
   background-color: var(--primary-color);
   color: var(--secondary-color);
+}
+
+#spinning-svg {
+  animation: spinOnce .8s ease-in-out;
+}
+  
+@keyframes spinOnce {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
 }
