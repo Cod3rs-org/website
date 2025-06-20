@@ -3,9 +3,13 @@ title: "Locations"
 description: "Find Cod3rs Community locations around the world"
 ---
 
+{{< section id="basic-section" >}}
+
 # Our Locations
 
 Cod3rs Community is growing globally! Find us in these locations:
+
+{{< /section >}}
 
 ## Esbjerg, Denmark
 

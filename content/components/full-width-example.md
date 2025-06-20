@@ -8,6 +8,20 @@ fullWidth: true
 
 This page demonstrates the use of the `fullWidth: true` parameter in the frontmatter. Unlike regular pages that have their content wrapped in a container with a maximum width of 1200px, this page's content spans the full width of the browser window.
 
+## How to Implement Full Width
+
+To make a page use the full width of the browser window, add the following parameter to the page's frontmatter:
+
+```yaml
+---
+title: "Your Page Title"
+description: "Your page description"
+fullWidth: true
+---
+```
+
+This parameter tells the template to render the page without the container that normally limits the content width.
+
 ## When to Use Full Width
 
 The full width layout is useful for:
@@ -23,6 +37,7 @@ To see the difference, compare this page with the [Design Components](/component
 
 ## Example of Wide Content
 
+{{< rawhtml >}}
 <div style="overflow-x: auto;">
   <table style="width: 100%; border-collapse: collapse; border: 2px solid #212121;">
     <thead>
@@ -67,3 +82,4 @@ To see the difference, compare this page with the [Design Components](/component
     </tbody>
   </table>
 </div>
+{{< /rawhtml >}}

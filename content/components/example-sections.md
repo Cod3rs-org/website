@@ -8,9 +8,21 @@ draft: true
 
 This page demonstrates how to use the section shortcodes in a real-world scenario. It shows how different section components can be combined to create a cohesive and visually appealing page.
 
+## Hero Image
+
 {{< hero-image image="/img/large-logo-bg.png" title="Welcome to Our Workshop" subtitle="Learn how to use section components effectively" >}}
 [Get Started](#basic-section){.btn .btn-primary}
 {{< /hero-image >}}
+
+<hr>
+
+```markdown
+{{</* hero-image image="/path/to/image.jpg" title="Hero Title" subtitle="Hero Subtitle" */>}}
+[Get Started](#){.btn .btn-primary}
+{{</* /hero-image */>}}
+```
+
+## Basic Section
 
 {{< section id="basic-section" >}}
 ## Basic Section
@@ -24,6 +36,20 @@ This is a basic section created with the `section` shortcode. It has default sty
 The basic section is the foundation for all other section types.
 {{< /section >}}
 
+<hr>
+
+```markdown
+{{</* section class="custom-class" style="padding: 3rem 0;" id="section-id" */>}}
+## Section Title
+
+This is the content of the section. You can include any Markdown content here.
+
+- List item 1
+- List item 2
+- List item 3
+{{</* /section */>}}
+```
+
 {{< section-full class="bg-light" id="full-width-section" >}}
 ## Full-Width Section
 
@@ -31,6 +57,16 @@ This section spans the full width of the page. It's perfect for content that nee
 
 The content is centered and has a maximum width to ensure readability on large screens.
 {{< /section-full >}}
+
+<hr>
+
+```markdown
+{{</* section-full class="custom-class" style="background-color: #f5f5f5;" id="full-width-section" */>}}
+## Full-Width Section
+
+This section spans the full width of the page. The content is centered and has a maximum width.
+{{</* /section-full */>}}
+```
 
 {{< section-two-column id="two-column-section" >}}
 {{< column >}}
@@ -55,6 +91,24 @@ The two-column section is responsive and will adjust based on the screen size. Y
 {{< /column >}}
 {{< /section-two-column >}}
 
+<hr>
+
+```markdown
+{{</* section-two-column class="custom-class" style="padding: 3rem 0;" id="two-column-section" */>}}
+{{</* column class="custom-column-class" style="padding: 2rem;" */>}}
+## Left Column
+
+Content for the left column goes here.
+{{</* /column */>}}
+
+{{</* column class="custom-column-class" style="padding: 2rem;" */>}}
+## Right Column
+
+Content for the right column goes here.
+{{</* /column */>}}
+{{</* /section-two-column */>}}
+```
+
 {{< section-dark id="dark-section" >}}
 ## Dark Section
 
@@ -65,6 +119,16 @@ This section has a dark background with light text. It's perfect for creating vi
 The dark background helps this content stand out from the rest of the page.
 {{< /section-dark >}}
 
+<hr>
+
+```markdown
+{{</* section-dark class="custom-class" style="padding: 3rem 0;" id="dark-section" */>}}
+## Dark Section
+
+This section has a dark background and light text.
+{{</* /section-dark */>}}
+```
+
 {{< section-light id="light-section" >}}
 ## Light Section
 
@@ -72,6 +136,16 @@ This section has a light background with dark text. It's the most traditional se
 
 The light background provides good readability for longer text content and is easy on the eyes.
 {{< /section-light >}}
+
+<hr>
+
+```markdown
+{{</* section-light class="custom-class" style="padding: 3rem 0;" id="light-section" */>}}
+## Light Section
+
+This section has a light background and dark text.
+{{</* /section-light */>}}
+```
 
 {{< section-accent id="accent-section" >}}
 ## Accent Section
@@ -81,6 +155,16 @@ This section has an accent (purple) background with light text. It's perfect for
 The accent color draws attention to this section and makes it stand out from the rest of the page.
 {{< /section-accent >}}
 
+<hr>
+
+```markdown
+{{</* section-accent class="custom-class" style="padding: 3rem 0;" id="accent-section" */>}}
+## Accent Section
+
+This section has an accent (purple) background and light text.
+{{</* /section-accent */>}}
+```
+
 {{< section-image image="/img/large-logo-bg.png" id="image-section" >}}
 ## Section with Background Image
 
@@ -88,6 +172,16 @@ This section has a background image with a dark overlay. It's perfect for creati
 
 The dark overlay ensures that the text remains readable regardless of the background image.
 {{< /section-image >}}
+
+<hr>
+
+```markdown
+{{</* section-image class="custom-class" style="padding: 5rem 0;" id="image-section" image="/path/to/image.jpg" */>}}
+## Section with Background Image
+
+This section has a background image with a dark overlay.
+{{</* /section-image */>}}
+```
 
 {{< section id="cards-section" >}}
 ## Cards with Images
@@ -106,6 +200,16 @@ You can create multiple cards and arrange them in a grid or list. Each card can 
 
 [Learn More](#)
 {{< /card-image >}}
+
+<hr>
+
+```markdown
+{{</* card-image class="custom-class" style="max-width: 400px;" id="card-id" image="/path/to/image.jpg" alt="Image description" title="Card Title" */>}}
+This is the content of the card. You can include any Markdown content here.
+
+[Learn More](#)
+{{</* /card-image */>}}
+```
 
 {{< section-dark id="conclusion" >}}
 ## Conclusion

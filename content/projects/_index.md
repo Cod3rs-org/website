@@ -3,6 +3,8 @@ title: "Projects"
 description: "Explore the projects we're working on in the Cod3rs Community"
 ---
 
+{{< section id="basic-section" >}}
+
 # Our Projects
 
 ## Current Projects
@@ -24,3 +26,5 @@ Interested in contributing to one of our projects? Here's how you can get involv
 4. Pick a task from our issue tracker and start contributing
 
 We welcome contributors of all skill levels, and our experienced members are always happy to provide guidance and support.
+
+{{< /section >}}
