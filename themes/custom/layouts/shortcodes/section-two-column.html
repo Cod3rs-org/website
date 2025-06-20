@@ -1,0 +1,5 @@
+<div class="{{ if .Get "class" }}{{ .Get "class" }} two-column-section{{ else }}section two-column-section{{ end }}" {{ if .Get "style" }}style="{{ .Get "style" }}"{{ end }} {{ if .Get "id" }}id="{{ .Get "id" }}"{{ end }}>
+  <div class="two-column-container">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

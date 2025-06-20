@@ -21,8 +21,16 @@
                         <a class="nav-link {{ if eq .RelPermalink "/blog/" }}active{{ end }}" href="/blog/" {{ if eq .RelPermalink "/blog/" }}aria-current="page"{{ end }}>Blog</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {{ if eq .RelPermalink "/locations/" }}active{{ end }}" href="/locations/" {{ if eq .RelPermalink "/locations/" }}aria-current="page"{{ end }}>Locations</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ if eq .RelPermalink "/contact/" }}active{{ end }}" href="/contact/" {{ if eq .RelPermalink "/contact/" }}aria-current="page"{{ end }}>Contact</a>
                     </li>
+                    {{ if hugo.IsServer }}
+                    <li class="nav-item">
+                        <a class="nav-link {{ if eq .RelPermalink "/components/" }}active{{ end }}" href="/components/" {{ if eq .RelPermalink "/components/" }}aria-current="page"{{ end }}>[Components]</a>
+                    </li>
+                    {{ end }}
                 </ul>
             </div>
 

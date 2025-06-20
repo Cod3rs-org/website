@@ -1,0 +1,3 @@
+<div class="{{ if .Get "class" }}{{ .Get "class" }} column{{ else }}column{{ end }}" style="{{ if .Get "style" }}{{ .Get "style" }}{{ end }}{{ if and (.Get "style") (.Get "width") }}; {{ end }}{{ if .Get "width" }}width: {{ .Get "width" }};{{ end }}"{{ if not (or (.Get "style") (.Get "width")) }} {{ end }}>
+  {{ .Inner | markdownify }}
+</div>
