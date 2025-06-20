@@ -257,6 +257,38 @@ section.alt {
   color: var(--accent-color);
 }
 
+/* Component Navigation */
+.component-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--secondary-color);
+  padding: 1rem 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.component-nav-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.component-nav-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   h1 {
@@ -269,6 +301,19 @@ section.alt {
 
   h3 {
     font-size: 1.5rem;
+  }
+
+  .component-nav {
+    overflow-x: auto;
+    padding: 0.5rem 0;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  .component-nav-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    white-space: nowrap;
   }
 
   .nav-list {
@@ -310,4 +355,3 @@ section.alt {
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
-

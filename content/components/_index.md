@@ -2,11 +2,27 @@
 title: "Design Components"
 description: "Documentation for the design components available in the Cod3rs Community website"
 draft: true
+fullWidth: false
 ---
 
 # Design Components
 
 This page showcases the various design components available for use in the Cod3rs Community website. These components provide consistent styling and make it easier to create visually appealing pages.
+
+## When to Use Each Component
+
+Here's a guide to help you decide which component to use in different situations:
+
+- **Hero Banner (Dark)**: Use for main page headers, introductions, or important announcements that need to span the full width of the page.
+- **Feature Box (Dark)**: Ideal for highlighting individual features, services, or benefits in a compact format.
+- **Card (Dark)**: Perfect for displaying content that needs a clear boundary and possibly a call-to-action button.
+- **Split Content (Dark)**: Use when you need to display content alongside an image or code snippet in a two-column layout.
+- **Call to Action (Dark)**: Ideal for prompting user engagement with a clear action button, such as sign-ups or registrations.
+- **Info Box (White)**: Use for explanatory content, details, or information that needs to stand out against the dark theme.
+- **Timeline (White)**: Perfect for displaying chronological events, schedules, or historical information.
+- **Highlight Box (Purple)**: Use sparingly for content that needs maximum attention, such as special offers or critical announcements.
+
+Choose components based on your content's purpose and importance. For examples of how these components work together, see the [Components Example Page](/components/example/).
 
 ## Dark Background Components
 
@@ -133,7 +149,7 @@ A timeline component with white background for displaying chronological events.
 ```html
 <div class="component-timeline-white">
   <h3>Timeline Title</h3>
-  
+
   <div class="timeline-item">
     <div class="timeline-date">Date or Time Period</div>
     <div class="timeline-content">
@@ -141,7 +157,7 @@ A timeline component with white background for displaying chronological events.
       <p>Description of the event or milestone.</p>
     </div>
   </div>
-  
+
   <div class="timeline-item">
     <div class="timeline-date">Another Date</div>
     <div class="timeline-content">
@@ -154,7 +170,7 @@ A timeline component with white background for displaying chronological events.
 
 <div class="component-timeline-white">
   <h3>Community Timeline</h3>
-  
+
   <div class="timeline-item">
     <div class="timeline-date">January 2023</div>
     <div class="timeline-content">
@@ -162,7 +178,7 @@ A timeline component with white background for displaying chronological events.
       <p>The Cod3rs Community was officially founded with the goal of bringing together passionate developers.</p>
     </div>
   </div>
-  
+
   <div class="timeline-item">
     <div class="timeline-date">March 2023</div>
     <div class="timeline-content">
@@ -214,3 +230,25 @@ More markdown content...
 ## Responsive Behavior
 
 All components are designed to be responsive and will adapt to different screen sizes. On mobile devices, the two-column layouts will stack vertically, and font sizes will be adjusted for better readability.
+
+## Page Layout Options
+
+By default, all content pages use a container class that limits the width of the content to 1200px and centers it on the page. You can control this behavior using the `fullWidth` parameter in the frontmatter:
+
+```yaml
+---
+title: "My Page Title"
+fullWidth: false  # Default: content is wrapped in a container
+---
+```
+
+Setting `fullWidth` to `true` will allow the content to span the full width of the browser window:
+
+```yaml
+---
+title: "My Page Title"
+fullWidth: true  # Content spans the full width of the page
+---
+```
+
+This setting is useful for pages that need to display wide content such as large tables, full-width images, or custom layouts.
