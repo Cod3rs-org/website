@@ -390,3 +390,8 @@ section.alt {
   height: 500px;
   max-width: 100%;
 }
+
+.stroke-text {
+  -webkit-text-stroke: 3px var(--secondary-color);
+  paint-order: stroke fill;
+}
