@@ -383,3 +383,10 @@ section.alt {
       transform: rotate(360deg);
   }
 }
+
+/* MAP CSS */
+#chartdiv {
+  width: 100%;
+  height: 500px;
+  max-width: 100%;
+}
