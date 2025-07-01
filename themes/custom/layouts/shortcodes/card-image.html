@@ -1,0 +1,11 @@
+<div class="{{ if .Get "class" }}{{ .Get "class" }} card-image{{ else }}card card-image{{ end }}" {{ if .Get "style" }}style="{{ .Get "style" }}"{{ end }} {{ if .Get "id" }}id="{{ .Get "id" }}"{{ end }}>
+  {{ if .Get "image" }}
+  <div class="card-image-top">
+    <img src="{{ .Get "image" }}" alt="{{ if .Get "alt" }}{{ .Get "alt" }}{{ else }}Card image{{ end }}" class="card-img">
+  </div>
+  {{ end }}
+  <div class="card-content">
+    {{ if .Get "title" }}<h3 class="card-title">{{ .Get "title" }}</h3>{{ end }}
+    {{ .Inner | markdownify }}
+  </div>
+</div>

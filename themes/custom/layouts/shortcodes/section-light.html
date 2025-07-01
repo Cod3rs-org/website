@@ -1,0 +1,3 @@
+<div class="{{ if .Get "class" }}{{ .Get "class" }} section-light{{ else }}section section-light{{ end }}" {{ if .Get "style" }}style="{{ .Get "style" }}"{{ end }} {{ if .Get "id" }}id="{{ .Get "id" }}"{{ end }}>
+  {{ .Inner | markdownify }}
+</div>

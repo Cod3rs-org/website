@@ -7,11 +7,53 @@
         {{ end }}
     </div>
 </header>
-<div class="container">
-
-    <section>
-        {{ .Content }}
-    </section>
+<div{{ if not (default false .Params.fullWidth) }} class="container"{{ end }}>
+    {{ if eq .Section "components" }}
+        <div class="component-nav">
+            {{ if eq .File.BaseFileName "example" }}
+                <a href="#about-the-workshop" class="component-nav-btn">About Workshop</a>
+                <a href="#workshop-schedule" class="component-nav-btn">Schedule</a>
+                <a href="#key-features" class="component-nav-btn">Features</a>
+                <a href="#testimonials" class="component-nav-btn">Testimonials</a>
+                <a href="#additional-resources" class="component-nav-btn">Resources</a>
+            {{ else if eq .File.BaseFileName "example-sections" }}
+                <a href="#basic-section" class="component-nav-btn">Basic Section</a>
+                <a href="#full-width-section" class="component-nav-btn">Full Width</a>
+                <a href="#two-column-section" class="component-nav-btn">Two Column</a>
+                <a href="#dark-section" class="component-nav-btn">Dark Section</a>
+                <a href="#light-section" class="component-nav-btn">Light Section</a>
+                <a href="#accent-section" class="component-nav-btn">Accent Section</a>
+                <a href="#image-section" class="component-nav-btn">Image Section</a>
+                <a href="#cards-section" class="component-nav-btn">Cards</a>
+                <a href="#conclusion" class="component-nav-btn">Conclusion</a>
+            {{ else if eq .File.BaseFileName "sections" }}
+                <a href="#basic-section" class="component-nav-btn">Basic Section</a>
+                <a href="#full-width-section" class="component-nav-btn">Full Width</a>
+                <a href="#two-column-section" class="component-nav-btn">Two Column</a>
+                <a href="#dark-section" class="component-nav-btn">Dark Section</a>
+                <a href="#light-section" class="component-nav-btn">Light Section</a>
+                <a href="#accent-section" class="component-nav-btn">Accent Section</a>
+                <a href="#section-with-background-image" class="component-nav-btn">Image Section</a>
+                <a href="#card-with-image" class="component-nav-btn">Card Image</a>
+                <a href="#hero-section-with-image" class="component-nav-btn">Hero Image</a>
+                <a href="#example-page" class="component-nav-btn">Example Page</a>
+                <a href="#customization" class="component-nav-btn">Customization</a>
+            {{ else if eq .File.BaseFileName "_index" }}
+                <a href="#when-to-use-each-component" class="component-nav-btn">When to Use</a>
+                <a href="#dark-background-components" class="component-nav-btn">Dark Components</a>
+                <a href="#white-background-components" class="component-nav-btn">White Components</a>
+                <a href="#purple-background-component" class="component-nav-btn">Purple Component</a>
+                <a href="#using-components-in-markdown" class="component-nav-btn">Using in Markdown</a>
+                <a href="#responsive-behavior" class="component-nav-btn">Responsive</a>
+                <a href="#page-layout-options" class="component-nav-btn">Layout Options</a>
+            {{ else if eq .File.BaseFileName "full-width-example" }}
+                <a href="#when-to-use-full-width" class="component-nav-btn">When to Use</a>
+                <a href="#comparison" class="component-nav-btn">Comparison</a>
+                <a href="#example-of-wide-content" class="component-nav-btn">Wide Content Example</a>
+            {{ end }}
+        </div>
+    {{ end }}
+    {{ .Content }}
 
     {{ if .Params.tags }}
     <div class="tags">

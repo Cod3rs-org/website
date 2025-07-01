@@ -1,0 +1,8 @@
+<div class="{{ if .Get "class" }}{{ .Get "class" }} hero-image{{ else }}hero hero-image{{ end }}" style="background-image: url('{{ .Get "image" }}'); background-size: cover; background-position: center; position: relative;{{ if .Get "style" }} {{ .Get "style" }}{{ end }}" {{ if .Get "id" }}id="{{ .Get "id" }}"{{ end }}>
+  <div class="hero-overlay" style="{{ if .Get "overlayColor" }}background-color: {{ .Get "overlayColor" }};{{ else }}background-color: rgba(0, 0, 0, 0.5);{{ end }} position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+  <div class="hero-content" style="position: relative; z-index: 1; color: {{ if .Get "textColor" }}{{ .Get "textColor" }}{{ else }}white{{ end }}; padding: 4rem 2rem;">
+    {{ if .Get "title" }}<h1 class="hero-title">{{ .Get "title" }}</h1>{{ end }}
+    {{ if .Get "subtitle" }}<h2 class="hero-subtitle">{{ .Get "subtitle" }}</h2>{{ end }}
+    {{ .Inner | markdownify }}
+  </div>
+</div>

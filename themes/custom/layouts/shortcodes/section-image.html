@@ -1,0 +1,5 @@
+<div class="{{ if .Get "class" }}{{ .Get "class" }} section-image{{ else }}section section-image{{ end }}" style="background-image: url('{{ .Get "image" }}'); background-size: cover; background-position: center;{{ if .Get "style" }} {{ .Get "style" }}{{ end }}" {{ if .Get "id" }}id="{{ .Get "id" }}"{{ end }}>
+  <div class="section-image-content">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

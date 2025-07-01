@@ -1,0 +1,5 @@
+<div class="{{ if .Get "class" }}{{ .Get "class" }} full-width{{ else }}section full-width{{ end }}" {{ if .Get "style" }}style="{{ .Get "style" }}"{{ end }} {{ if .Get "id" }}id="{{ .Get "id" }}"{{ end }}>
+  <div class="full-width-content">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

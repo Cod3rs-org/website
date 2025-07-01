@@ -1,0 +1,269 @@
+/* Design Components for Cod3rs Community Website
+ * This file contains 8 different design components:
+ * - 5 with dark backgrounds
+ * - 2 with white backgrounds
+ * - 1 with purple background
+ */
+
+/* ===== DARK BACKGROUND COMPONENTS ===== */
+
+/* 1. Hero Banner - Dark
+ * A full-width banner with dark background for page headers or important announcements
+ */
+.component-hero-dark {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 4rem 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 10px solid var(--accent-color);
+}
+
+.component-hero-dark h1, 
+.component-hero-dark h2 {
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border-bottom: none;
+}
+
+.component-hero-dark p {
+  font-size: 1.2rem;
+  max-width: 800px;
+}
+
+/* 2. Feature Box - Dark
+ * A box for highlighting features or services with dark background
+ */
+.component-feature-dark {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-left: 5px solid var(--accent-color);
+}
+
+.component-feature-dark h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.component-feature-dark p {
+  margin-bottom: 1rem;
+}
+
+/* 3. Card - Dark
+ * A card component with dark background for content display
+ */
+.component-card-dark {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 5px solid var(--accent-color);
+}
+
+.component-card-dark h3 {
+  border-bottom: 3px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.component-card-dark .btn {
+  margin-top: 1rem;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+.component-card-dark .btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* 4. Split Content - Dark
+ * A two-column layout with dark background for content and image/code
+ */
+.component-split-dark {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-top: 5px solid var(--accent-color);
+  border-bottom: 5px solid var(--accent-color);
+}
+
+.component-split-dark .content {
+  padding: 1rem;
+}
+
+.component-split-dark .media {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.component-split-dark img,
+.component-split-dark pre {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 5. Call to Action - Dark
+ * A call to action component with dark background
+ */
+.component-cta-dark {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  border: 5px solid var(--secondary-color);
+}
+
+.component-cta-dark h2 {
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border-bottom: none;
+}
+
+.component-cta-dark p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+.component-cta-dark .btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 0.8rem 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.component-cta-dark .btn:hover {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+/* ===== WHITE BACKGROUND COMPONENTS ===== */
+
+/* 6. Info Box - White
+ * An information box with white background
+ */
+.component-info-white {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 5px solid var(--primary-color);
+}
+
+.component-info-white h3 {
+  border-bottom: 3px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.component-info-white p {
+  margin-bottom: 1rem;
+}
+
+.component-info-white .accent {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/* 7. Timeline - White
+ * A timeline component with white background for displaying chronological events
+ */
+.component-timeline-white {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-left: 5px solid var(--primary-color);
+}
+
+.component-timeline-white h3 {
+  margin-bottom: 1.5rem;
+}
+
+.component-timeline-white .timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--accent-color);
+}
+
+.component-timeline-white .timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.component-timeline-white .timeline-date {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+.component-timeline-white .timeline-content {
+  padding-left: 1rem;
+}
+
+/* ===== PURPLE BACKGROUND COMPONENT ===== */
+
+/* 8. Highlight Box - Purple
+ * A highlight box with purple background for important content
+ */
+.component-highlight-purple {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 5px solid var(--primary-color);
+}
+
+.component-highlight-purple h3 {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+}
+
+.component-highlight-purple p {
+  margin-bottom: 1rem;
+}
+
+.component-highlight-purple .btn {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.component-highlight-purple .btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .component-split-dark {
+    grid-template-columns: 1fr;
+  }
+  
+  .component-hero-dark,
+  .component-cta-dark {
+    padding: 2rem 1rem;
+  }
+  
+  .component-hero-dark h1, 
+  .component-hero-dark h2,
+  .component-cta-dark h2 {
+    font-size: 2rem;
+  }
+}

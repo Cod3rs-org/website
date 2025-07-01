@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md w-100 px-3 px-lg-5 py-2" aria-label="Main Navigation">
     <div class="d-flex justify-content-between align-items-center w-100">
-            
+
         <div class="d-flex flex-row flex-md-column justify-content-between flex-fill gap-2">
             <h2 class="navbar-brand large rubik-mono-one-regular text-white m-0">COD3RS</h2>
             <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -8,7 +8,7 @@
             </button>
 
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                
+
                 <div class="offcanvas-header">
                     <img src="\img\logo.png" alt="COD3RS Logo" class="img-fluid me-2 ms-2" width="70" height="70">
                     <button type="button" class="btn-close me-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -25,12 +25,20 @@
                         <li class="nav-item">
                             <a class="nav-link {{ if eq .RelPermalink "/projects/" }}active{{ end }}" href="/projects/" {{ if eq .RelPermalink "/projects/" }}aria-current="page"{{ end }}>Projects</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item d-none">
                             <a class="nav-link {{ if eq .RelPermalink "/blog/" }}active{{ end }}" href="/blog/" {{ if eq .RelPermalink "/blog/" }}aria-current="page"{{ end }}>Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ if eq .RelPermalink "/locations/" }}active{{ end }}" href="/locations/" {{ if eq .RelPermalink "/locations/" }}aria-current="page"{{ end }}>Locations</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ if eq .RelPermalink "/contact/" }}active{{ end }}" href="/contact/" {{ if eq .RelPermalink "/contact/" }}aria-current="page"{{ end }}>Contact</a>
                         </li>
+                        {{ if hugo.IsServer }}
+                            <li class="nav-item">
+                                <a class="nav-link {{ if eq .RelPermalink "/components/" }}active{{ end }}" href="/components/" {{ if eq .RelPermalink "/components/" }}aria-current="page"{{ end }}>[Components]</a>
+                            </li>
+                        {{ end }}
                     </ul>
                 </div>
 
