@@ -392,6 +392,6 @@ section.alt {
 }
 
 .stroke-text {
-  -webkit-text-stroke: 3px var(--secondary-color);
+  -webkit-text-stroke: 3px #E8E8EB;
   paint-order: stroke fill;
 }
