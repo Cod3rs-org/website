@@ -7,13 +7,13 @@ location: "Denmark / Slovakia"
 draft: false
 ---
 
-{{< section-light id="intro" >}}
+
 Hey everyone! We're super excited to announce Summ3r Cod3 2025! This is basically your chance to build something awesome over the summer and win some Cod3rs swag while you're at it.
 
 ### What's this all about?
 
 Pretty simple really - Summ3r Cod3 runs through July and August where you can build ANY project you want. Seriously, anything! Got an app idea? A game concept? Want to play with AI? Or maybe build something with Arduino? Go for it!
-{{< /section-light >}}
+
 
 <!--more-->
 
