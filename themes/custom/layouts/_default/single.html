@@ -2,7 +2,20 @@
 <header class="header">
     <div class="container">
         <h1>{{ .Title }}</h1>
-        {{ if .Date }}
+        {{ if and (eq .Section "events") .Date }}
+            <p class="date">
+                {{ if .Params.endDate }}
+                    {{ $endDate := time .Params.endDate }}
+                    {{ if eq (.Date.Format "January 2, 2006") ($endDate.Format "January 2, 2006") }}
+                        Event on {{ .Date.Format "January 2, 2006" }}
+                    {{ else }}
+                        Event from {{ .Date.Format "January 2, 2006" }} to {{ $endDate.Format "January 2, 2006" }}
+                    {{ end }}
+                {{ else }}
+                    Event on {{ .Date.Format "January 2, 2006" }}
+                {{ end }}
+            </p>
+        {{ else if .Date }}
             <p class="date">Published on {{ .Date.Format "January 2, 2006" }}</p>
         {{ end }}
     </div>

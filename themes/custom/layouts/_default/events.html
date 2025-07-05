@@ -1,0 +1,137 @@
+{{ define "main" }}
+<header class="header">
+    <div class="container-fluid px-4">
+        <h1>{{ .Title }}</h1>
+        {{ if .Description }}
+            <p>{{ .Description }}</p>
+        {{ end }}
+    </div>
+</header>
+
+<div class="container-fluid px-4">
+    {{ if .Content }}
+        {{ .Content }}
+    {{ end }}
+
+    <section id="upcoming-events" class="mb-5">
+        <h2>UPCOMING EVENTS</h2>
+        {{ $upcomingEvents := where .Site.RegularPages "Section" "events" }}
+        {{ $currentEvents := slice }}
+        {{ range $upcomingEvents }}
+            {{ if .Params.endDate }}
+                {{ $endDate := time .Params.endDate }}
+                {{ if ge $endDate.Unix now.Unix }}
+                    {{ $currentEvents = $currentEvents | append . }}
+                {{ end }}
+            {{ else }}
+                {{ if ge .Date.Unix now.Unix }}
+                    {{ $currentEvents = $currentEvents | append . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        {{ if $currentEvents }}
+            <div class="events-list">
+                {{ range sort $currentEvents ".Date" }}
+                    <div class="component-feature-dark event-card">
+                        <div class="event-date">
+                            <span class="date-day">{{ .Date.Day }}</span>
+                            <span class="date-month">{{ .Date.Format "Jan" }}</span>
+                            <span class="date-year">{{ .Date.Format "2006" }}</span>
+                            {{ if .Params.endDate }}
+                                <span class="date-separator">-</span>
+                                {{ $endDate := time .Params.endDate }}
+                                <span class="date-day">{{ $endDate.Day }}</span>
+                                <span class="date-month">{{ $endDate.Format "Jan" }}</span>
+                                <span class="date-year">{{ $endDate.Format "2006" }}</span>
+                            {{ end }}
+                        </div>
+                        <div class="event-details">
+                            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                            <p class="event-location">{{ .Params.location }}</p>
+                            <p class="event-description">{{ .Summary }}</p>
+                            <a href="{{ .RelPermalink }}" class="btn btn-sm btn-outline-custom">View Details</a>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        {{ else }}
+            <p>No upcoming events scheduled. Check back soon!</p>
+        {{ end }}
+    </section>
+
+            <section id="past-events">
+        <h2>PAST EVENTS</h2>
+        {{ $allEvents := where .Site.RegularPages "Section" "events" }}
+        {{ $pastEvents := slice }}
+        {{ range $allEvents }}
+            {{ if .Params.endDate }}
+                {{ $endDate := time .Params.endDate }}
+                {{ if lt $endDate.Unix now.Unix }}
+                    {{ $pastEvents = $pastEvents | append . }}
+                {{ end }}
+            {{ else }}
+                {{ if lt .Date.Unix now.Unix }}
+                    {{ $pastEvents = $pastEvents | append . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        {{ if $pastEvents }}
+            <div class="timeline">
+                {{ $currentYear := 0 }}
+                {{ $eventIndex := 0 }} <!-- Global counter for alternating layout -->
+                {{ range sort $pastEvents ".Date" "desc" }}
+                    {{ $year := .Date.Year }}
+                    {{ if ne $currentYear $year }}
+                        {{ if ne $currentYear 0 }}
+                            <div class="timeline-year-end"></div>
+                        {{ end }}
+                        <div class="timeline-year-marker">
+                            <span>{{ $year }}</span>
+                        </div>
+                        {{ $currentYear = $year }}
+                    {{ end }}
+                    <div class="timeline-wrapper {{ if modBool $eventIndex 2 }}even{{ else }}odd{{ end }}">
+                        <div class="timeline-image-container">
+                            {{ if .Params.featuredImage }}
+                            <div class="timeline-image">
+                                <img src="{{ .Params.featuredImage }}" alt="{{ .Title }}" class="img-fluid rounded shadow">
+                            </div>
+                            {{ end }}
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-item">
+                            <div class="timeline-content component-feature-dark">
+                                <div class="timeline-date">
+                                    <span class="date-day">{{ .Date.Day }}</span>
+                                    <span class="date-month">{{ .Date.Format "Jan" }}</span>
+                                    {{ if .Params.endDate }}
+                                        <span class="date-separator">-</span>
+                                        {{ $endDate := time .Params.endDate }}
+                                        <span class="date-day">{{ $endDate.Day }}</span>
+                                        <span class="date-month">{{ $endDate.Format "Jan" }}</span>
+                                        {{ if ne $endDate.Year .Date.Year }}
+                                            <span class="date-year">{{ $endDate.Format "2006" }}</span>
+                                        {{ end }}
+                                    {{ end }}
+                                </div>
+                                <div class="timeline-details">
+                                    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                                    <p class="event-location">{{ .Params.location }}</p>
+                                    <p class="event-description">{{ .Summary }}</p>
+                                    <a href="{{ .RelPermalink }}" class="btn btn-sm btn-outline-custom">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ $eventIndex = add $eventIndex 1 }} <!-- Increment the global counter -->
+                {{ end }}
+                <div style="clear: both; padding-bottom: 60px;"></div>
+            </div>
+        {{ else }}
+            <p>No past events yet.</p>
+        {{ end }}
+    </section>
+</div>
+
+<link rel="stylesheet" href="/css/events.css">
+{{ end }}

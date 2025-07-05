@@ -1,0 +1,295 @@
+/* Events Page Styles */
+
+.events-list {
+    margin-top: 30px;
+}
+
+.event-card {
+    display: flex;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Timeline Layout for Past Events */
+.timeline {
+    position: relative;
+    padding: 40px 0;
+    margin: 30px 0;
+    overflow: hidden; /* Contain floated elements */
+    min-height: 400px; /* Ensure minimum height */
+}
+
+/* Timeline Image Styles */
+.timeline-wrapper {
+    position: relative;
+    margin-bottom: 50px;
+    width: 100%;
+    clear: both;
+    min-height: 200px; /* Ensure minimum height for image alignment */
+}
+
+.timeline-wrapper.odd .timeline-item {
+    float: right;
+    padding-left: 40px;
+    text-align: left;
+    width: 50%;
+    margin-top: 0;
+}
+
+.timeline-wrapper.even .timeline-item {
+    float: left;
+    padding-right: 40px;
+    text-align: right;
+    width: 50%;
+    margin-top: 0;
+}
+
+.timeline-image-container {
+    position: absolute;
+    width: 280px;
+    z-index: 4;
+    top: 20px; /* Adjusted to align with content */
+}
+
+.timeline-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.timeline-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.timeline-wrapper.odd .timeline-image-container {
+    left: 10px;
+}
+
+.timeline-wrapper.even .timeline-image-container {
+    right: 10px;
+}
+
+.timeline-wrapper:hover .timeline-image {
+    transform: scale(1.05);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: var(--primary-color);
+    margin-left: -2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    width: 50%;
+    clear: both;
+}
+
+/* These selectors are removed to avoid conflicts with .timeline-wrapper.odd/.even styles */
+
+.timeline-marker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: 4px solid var(--secondary-color);
+    top: 20px; /* Adjusted to match image container position */
+    z-index: 5;
+}
+
+.timeline-wrapper.even .timeline-marker {
+    right: -12px;
+}
+
+.timeline-wrapper.odd .timeline-marker {
+    left: -12px;
+}
+
+.timeline-content {
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.3s ease;
+    margin-top: 0; /* Removed margin to align with image and marker */
+}
+
+.timeline-wrapper.even .timeline-content:hover {
+    transform: translateX(-10px);
+}
+
+.timeline-wrapper.odd .timeline-content:hover {
+    transform: translateX(10px);
+}
+
+/* Year Markers */
+.timeline-year-marker {
+    position: relative;
+    text-align: center;
+    padding: 30px 0;
+    clear: both;
+    z-index: 3;
+}
+
+.timeline-year-marker span {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 5px 20px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.timeline-year-end {
+    clear: both;
+    height: 40px;
+}
+
+/* Ensure proper clearing at the end of timeline */
+.timeline::after {
+    content: "";
+    display: table;
+    clear: both;
+    margin-bottom: 60px; /* Add extra space at the bottom */
+}
+
+/* Timeline Date Display */
+.timeline-date {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.timeline-wrapper.even .timeline-date {
+    justify-content: flex-end;
+}
+
+.event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    margin-right: 20px;
+    text-align: center;
+    border-right: 1px solid #755AFB;
+    padding-right: 20px;
+}
+
+.date-day {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.date-month {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.date-year {
+    font-size: 0.9rem;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-location {
+    color: #755AFB;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.event-description {
+    margin-bottom: 15px;
+}
+
+.event-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.event-form .form-control {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+}
+
+.event-form .form-control:focus {
+    border-color: #755AFB;
+    box-shadow: 0 0 0 0.25rem rgba(117, 90, 251, 0.25);
+}
+
+.event-form .form-label {
+    color: #eee;
+}
+
+@media (max-width: 576px) {
+    .event-card {
+        flex-direction: column;
+    }
+
+    .event-date {
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid #755AFB;
+        padding-right: 0;
+        padding-bottom: 10px;
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        gap: 10px;
+    }
+}
+
+/* Responsive timeline image adjustments */
+@media (max-width: 1200px) {
+    .timeline-image {
+        width: 220px;
+    }
+}
+
+@media (max-width: 991px) {
+    .timeline-image {
+        width: 180px;
+    }
+}
+
+@media (max-width: 767px) {
+    .timeline-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .timeline-image {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 50px;
+        margin-bottom: 30px;
+        order: 2;
+    }
+
+    .timeline-wrapper:nth-child(odd) .timeline-image,
+    .timeline-wrapper:nth-child(even) .timeline-image {
+        left: 0;
+        right: 0;
+    }
+}
