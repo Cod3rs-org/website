@@ -1,20 +1,19 @@
 ---
-title: "Summ3r Cod3"
+title: "Summ3r Cod3 - Let's Build Cool Stuff!"
 date: 2025-07-01T00:00:00+00:00
 endDate: 2025-08-30T23:59:00+00:00
 description: "Create any application/project during summer 2025"
 location: "Denmark / Slovakia"
-featuredImage: "/img/summer-code-banner.jpg"
 draft: false
 ---
-
-## Summ3r Cod3 2025 - Let's Build Cool Stuff!
 
 Hey everyone! We're super excited to announce Summ3r Cod3 2025! This is basically your chance to build something awesome over the summer and win some Cod3rs swag while you're at it.
 
 ### What's this all about?
 
 Pretty simple really - Summ3r Cod3 runs through July and August where you can build ANY project you want. Seriously, anything! Got an app idea? A game concept? Want to play with AI? Or maybe build something with Arduino? Go for it!
+
+<!--more-->
 
 ### How do I join in?
 
