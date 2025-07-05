@@ -186,11 +186,11 @@
 
         <div class="position-relative w-100 m-0">
             <div class="position-absolute m-5 px-3 rubik-mono-one-regular" style="z-index: 10">
-                <h2>
+                <p class="responsive-text">
                     <span class="stroke-text">Now in</span>
                     <span class="accent-color">Denmark</span><br>
                     <span class="stroke-text">and</span> <span class="accent-color">Slovakia</span>
-                </h2>
+                </p>
             </div>
             <div id="chartdiv"></div>
         </div>
@@ -214,8 +214,10 @@
             ]);
 
             var chart = root.container.children.push(am5map.MapChart.new(root, {
-                panX: "rotateX",
-                panY: "rotateY",
+                panX: false,
+                panY: false,
+                wheelX: "none",
+                wheelY: "none",
                 projection: am5map.geoOrthographic(),
                 paddingBottom: 20,
                 paddingTop: 20,
@@ -223,7 +225,9 @@
                 paddingRight: 20,
                 rotationX: -10,
                 rotationY: -55,
-                zoomLevel: 7
+                zoomLevel: 7,
+                maxZoomLevel: 7,
+                minZoomLevel: 7
             }));
 
             var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
@@ -231,7 +235,6 @@
             }));
 
             polygonSeries.mapPolygons.template.setAll({
-                tooltipText: "{name}",
                 toggleKey: "active",
                 interactive: true,
                 fill: am5.color("#212121"),
@@ -241,7 +244,7 @@
             polygonSeries.mapPolygons.template.states.create("hover", {
                 fill: am5.color("#755AFB")
             });
-
+            
             polygonSeries.mapPolygons.template.states.create("active", {
                 fill: am5.color("#755AFB")
             });
@@ -264,9 +267,14 @@
             );
 
             graticuleSeries.mapLines.template.set("strokeOpacity", 0.1);
-
+            
             var alwaysActiveCountries = ["DK", "SK"]; // Denmark and Slovakia
             var previousPolygon;
+
+            polygonSeries.mapPolygons.template.adapters.add("tooltipText", function(_, target) {
+                const id = target.dataItem?.get("id");
+                return (alwaysActiveCountries.includes(id)) ? "{name}" : "";
+            });
 
             polygonSeries.mapPolygons.template.on("active", function(active, target) {
                 const id = target.dataItem.get("id");
@@ -274,17 +282,10 @@
                 if (alwaysActiveCountries.includes(id)) {
                     target.set("active", true);
                     return;
-                }
-
-                if (previousPolygon && previousPolygon != target) {
-                    previousPolygon.set("active", false);
-                }
-
-                if (target.get("active")) {
-                    selectCountry(id);
-                }
-
-                previousPolygon = target;
+                } else target.set("active", false);
+                
+                if (alwaysActiveCountries.includes(id)) 
+                    previousPolygon = target;
             });
 
             function selectCountry(id) {
