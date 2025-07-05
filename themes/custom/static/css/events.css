@@ -8,6 +8,8 @@
     display: flex;
     margin-bottom: 20px;
     transition: transform 0.3s ease;
+    width: 75%;
+    margin-right: auto;
 }
 
 .event-card:hover {
@@ -253,9 +255,16 @@
     color: var(--secondary-color);
 }
 
-@media (max-width: 576px) {
+    @media (max-width: 992px) {
+    .event-card {
+        width: 90%;
+    }
+    }
+
+    @media (max-width: 576px) {
     .event-card {
         flex-direction: column;
+        width: 100%;
     }
 
     .event-date {
