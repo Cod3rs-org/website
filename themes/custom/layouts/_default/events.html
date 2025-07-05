@@ -13,7 +13,7 @@
         {{ .Content }}
     {{ end }}
 
-    <section id="upcoming-events" class="mb-5">
+    <div id="upcoming-events" class="mb-5">
         <h2>UPCOMING EVENTS</h2>
         {{ $upcomingEvents := where .Site.RegularPages "Section" "events" }}
         {{ $currentEvents := slice }}
@@ -57,9 +57,11 @@
         {{ else }}
             <p>No upcoming events scheduled. Check back soon!</p>
         {{ end }}
-    </section>
+    </div>
 
-            <section id="past-events">
+    <hr/>
+
+    <div id="past-events">
         <h2>PAST EVENTS</h2>
         {{ $allEvents := where .Site.RegularPages "Section" "events" }}
         {{ $pastEvents := slice }}
@@ -130,7 +132,7 @@
         {{ else }}
             <p>No past events yet.</p>
         {{ end }}
-    </section>
+    </div>
 </div>
 
 <link rel="stylesheet" href="/css/events.css">
