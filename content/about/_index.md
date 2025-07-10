@@ -1,6 +1,7 @@
 ---
 title: "About"
 description: "Learn more about the Cod3rs Community and our mission"
+layout: "single"
 ---
 
 {{< section id="basic-section" >}}
