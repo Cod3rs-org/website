@@ -241,6 +241,24 @@ section.alt {
   color: var(--accent-color);
 }
 
+.discord-btn {
+  background-color: var(--accent-color) !important;
+  color: var(--secondary-color) !important;
+  border: 3px solid var(--accent-color) !important;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(117, 90, 251, 0.5);
+}
+
+.discord-btn:hover {
+  background-color: var(--secondary-color) !important;
+  color: var(--accent-color) !important;
+  box-shadow: 0 0 15px rgba(117, 90, 251, 0.8);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
 /* Footer */
 .footer {
   background-color: var(--primary-color);
