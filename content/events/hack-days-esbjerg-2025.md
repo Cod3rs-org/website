@@ -1,7 +1,7 @@
 ---
 title: "Hack Days in Esbjerg by Cod3rs"
-date: 2025-11-13T13:00:00+01:00
-endDate: 2025-11-13T16:00:00+01:00
+date: 2025-12-06T13:00:00+01:00
+endDate: 2025-12-06T16:00:00+01:00
 description: "A lightning-fast student hackathon powered by Google Gemini in just 3 hours"
 location: "Business Academy Southwest, Esbjerg, Denmark"
 draft: false
@@ -11,7 +11,7 @@ Ready to build something bold in just 3 hours? Hack Days in Esbjerg is a lightni
 
 ### Event Details
 
-**When:** November 13, 2025, 1:00 PM - 4:00 PM CET  
+**When:** December 6, 2025, 1:00 PM - 4:00 PM CET  
 **Where:** Business Academy Southwest, Spangsbjerg Kirkevej 103, Esbjerg, Denmark  
 **Duration:** 3 hours of intensive coding  
 **What's included:** Pizza! 🍕
@@ -63,6 +63,8 @@ This hackathon leverages the power of Google Gemini AI to help participants buil
 ### Who Can Join?
 
 This event is **FREE** and open to ALL students in Esbjerg! No matter your experience level or field of study, if you're curious about technology and want to try your hand at rapid prototyping, this event is for you.
+
+**Registration is required to attend.** Please register on the MLH events page.
 
 Perfect for:
 - Computer Science students
