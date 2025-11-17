@@ -1,6 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
+startDate: {{ .Date }}
 endDate: {{ .Date }}
 description: ""
 location: ""

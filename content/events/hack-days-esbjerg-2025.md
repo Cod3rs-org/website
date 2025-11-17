@@ -1,6 +1,7 @@
 ---
 title: "Hack Days in Esbjerg by Cod3rs"
-date: 2025-12-06T13:00:00+01:00
+date: 2025-09-01T00:00:00+01:00
+startDate: 2025-12-06T13:00:00+01:00
 endDate: 2025-12-06T16:00:00+01:00
 description: "A lightning-fast student hackathon powered by Google Gemini in just 3 hours"
 location: "Business Academy Southwest, Esbjerg, Denmark"
