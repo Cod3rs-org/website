@@ -5,6 +5,7 @@ startDate: 2025-12-06T13:00:00+01:00
 endDate: 2025-12-06T16:00:00+01:00
 description: "A lightning-fast student hackathon powered by Google Gemini in just 3 hours"
 location: "Business Academy Southwest, Esbjerg, Denmark"
+website: "https://events.mlh.io/events/13217-hack-days-in-esbjerg-by-cod3rs"
 draft: false
 ---
 
