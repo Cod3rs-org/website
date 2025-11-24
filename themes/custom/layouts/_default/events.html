@@ -23,6 +23,11 @@
                 {{ if ge $endDate.Unix now.Unix }}
                     {{ $currentEvents = $currentEvents | append . }}
                 {{ end }}
+            {{ else if .Params.startDate }}
+                {{ $startDate := time .Params.startDate }}
+                {{ if ge $startDate.Unix now.Unix }}
+                    {{ $currentEvents = $currentEvents | append . }}
+                {{ end }}
             {{ else }}
                 {{ if ge .Date.Unix now.Unix }}
                     {{ $currentEvents = $currentEvents | append . }}
@@ -31,12 +36,19 @@
         {{ end }}
         {{ if $currentEvents }}
             <div class="events-list">
-                {{ range sort $currentEvents ".Date" }}
+                {{ range sort $currentEvents ".Params.startDate" }}
                     <div class="component-feature-dark event-card">
                         <div class="event-date">
-                            <span class="date-day">{{ .Date.Day }}</span>
-                            <span class="date-month">{{ .Date.Format "Jan" }}</span>
-                            <span class="date-year">{{ .Date.Format "2006" }}</span>
+                            {{ if .Params.startDate }}
+                                {{ $startDate := time .Params.startDate }}
+                                <span class="date-day">{{ $startDate.Day }}</span>
+                                <span class="date-month">{{ $startDate.Format "Jan" }}</span>
+                                <span class="date-year">{{ $startDate.Format "2006" }}</span>
+                            {{ else }}
+                                <span class="date-day">{{ .Date.Day }}</span>
+                                <span class="date-month">{{ .Date.Format "Jan" }}</span>
+                                <span class="date-year">{{ .Date.Format "2006" }}</span>
+                            {{ end }}
                             {{ if .Params.endDate }}
                                 <span class="date-separator">-</span>
                                 {{ $endDate := time .Params.endDate }}
@@ -81,16 +93,22 @@
             <div class="timeline">
                 {{ $currentYear := 0 }}
                 {{ $eventIndex := 0 }} <!-- Global counter for alternating layout -->
-                {{ range sort $pastEvents ".Date" "desc" }}
-                    {{ $year := .Date.Year }}
-                    {{ if ne $currentYear $year }}
+                {{ range sort $pastEvents ".Params.startDate" "desc" }}
+                    {{ $displayYear := 0 }}
+                    {{ if .Params.startDate }}
+                        {{ $startDate := time .Params.startDate }}
+                        {{ $displayYear = $startDate.Year }}
+                    {{ else }}
+                        {{ $displayYear = .Date.Year }}
+                    {{ end }}
+                    {{ if ne $currentYear $displayYear }}
                         {{ if ne $currentYear 0 }}
                             <div class="timeline-year-end"></div>
                         {{ end }}
                         <div class="timeline-year-marker">
-                            <span>{{ $year }}</span>
+                            <span>{{ $displayYear }}</span>
                         </div>
-                        {{ $currentYear = $year }}
+                        {{ $currentYear = $displayYear }}
                     {{ end }}
                     <div class="timeline-wrapper {{ if modBool $eventIndex 2 }}even{{ else }}odd{{ end }}">
                         <div class="timeline-image-container">
@@ -104,15 +122,28 @@
                         <div class="timeline-item">
                             <div class="timeline-content component-feature-dark">
                                 <div class="timeline-date">
-                                    <span class="date-day">{{ .Date.Day }}</span>
-                                    <span class="date-month">{{ .Date.Format "Jan" }}</span>
+                                    {{ if .Params.startDate }}
+                                        {{ $startDate := time .Params.startDate }}
+                                        <span class="date-day">{{ $startDate.Day }}</span>
+                                        <span class="date-month">{{ $startDate.Format "Jan" }}</span>
+                                    {{ else }}
+                                        <span class="date-day">{{ .Date.Day }}</span>
+                                        <span class="date-month">{{ .Date.Format "Jan" }}</span>
+                                    {{ end }}
                                     {{ if .Params.endDate }}
                                         <span class="date-separator">-</span>
                                         {{ $endDate := time .Params.endDate }}
                                         <span class="date-day">{{ $endDate.Day }}</span>
                                         <span class="date-month">{{ $endDate.Format "Jan" }}</span>
-                                        {{ if ne $endDate.Year .Date.Year }}
-                                            <span class="date-year">{{ $endDate.Format "2006" }}</span>
+                                        {{ if .Params.startDate }}
+                                            {{ $startDate := time .Params.startDate }}
+                                            {{ if ne $endDate.Year $startDate.Year }}
+                                                <span class="date-year">{{ $endDate.Format "2006" }}</span>
+                                            {{ end }}
+                                        {{ else }}
+                                            {{ if ne $endDate.Year .Date.Year }}
+                                                <span class="date-year">{{ $endDate.Format "2006" }}</span>
+                                            {{ end }}
                                         {{ end }}
                                     {{ end }}
                                 </div>
