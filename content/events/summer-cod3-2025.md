@@ -108,7 +108,7 @@ We actually care about how you build stuff, not just the final result. So maybe:
   </div>
 
   <div class="timeline-item">
-    <div class="timeline-date">Early September</div>
+    <div class="timeline-date">Late August/Early September</div>
     <div class="timeline-content">
       <h4>Project showcase</h4>
       <p>We'll show off everyone's projects and send out prizes</p>

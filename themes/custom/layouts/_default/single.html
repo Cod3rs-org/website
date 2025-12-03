@@ -4,15 +4,23 @@
         <h1>{{ .Title }}</h1>
         {{ if and (eq .Section "events") .Date }}
             <p class="date">
-                {{ if .Params.endDate }}
-                    {{ $endDate := time .Params.endDate }}
-                    {{ if eq (.Date.Format "January 2, 2006") ($endDate.Format "January 2, 2006") }}
-                        Event on {{ .Date.Format "January 2, 2006" }}
+                {{ if .Params.startDate }}
+                    {{ $startDate := time .Params.startDate }}
+                    {{ if .Params.endDate }}
+                        {{ $endDate := time .Params.endDate }}
+                        {{ if eq ($startDate.Format "January 2, 2006") ($endDate.Format "January 2, 2006") }}
+                            Event on {{ $startDate.Format "January 2, 2006" }}
+                        {{ else }}
+                            Event from {{ $startDate.Format "January 2, 2006" }} to {{ $endDate.Format "January 2, 2006" }}
+                        {{ end }}
                     {{ else }}
-                        Event from {{ .Date.Format "January 2, 2006" }} to {{ $endDate.Format "January 2, 2006" }}
+                        Event on {{ $startDate.Format "January 2, 2006" }}
                     {{ end }}
+                {{ else if .Params.endDate }}
+                    {{ $endDate := time .Params.endDate }}
+                    Event on {{ $endDate.Format "January 2, 2006" }}
                 {{ else }}
-                    Event on {{ .Date.Format "January 2, 2006" }}
+                    Published on {{ .Date.Format "January 2, 2006" }}
                 {{ end }}
             </p>
         {{ else if .Date }}
