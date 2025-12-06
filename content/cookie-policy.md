@@ -1,14 +1,5 @@
 ---
 title: Cookie Policy
-date: 2023-03-13
-menu:
-  footer2:
-    weight: 10
-redirects:
-  - /hackathon/cookie-policy/
-
-section:
-  style: "text-align: justify;"
 ---
 
 ## What are cookies?

@@ -1,17 +1,6 @@
 ---
 title: Privacy Policy
-menu:
-  footer2:
-    weight: 20
-redirects:
-  - /hackathon/privacy-policy/
-modified: 2023-08-23
-
-section:
-  style: "text-align: justify;"
 ---
-
-*{{< last-updated >}}*
 
 # Privacy policy
 

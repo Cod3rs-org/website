@@ -1,19 +1,6 @@
 ---
 title: Code of Conduct
-description: |
-  We stand for inclusivity and respect. Every single person has the right to engage in a safe and welcoming environment, be it at the workplace, an event, or at social gatherings.
-menu:
-  footer2:
-    weight: 9
-redirects:
-  - /hackathon/code-of-conduct/
-modified: 2023-03-13
-
-section:
-  style: "text-align: justify;"
 ---
-
-*{{< last-updated >}}*
 
 ## Code of Conduct
 
