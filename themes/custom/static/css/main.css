@@ -296,6 +296,12 @@ section.alt {
   gap: 2rem;
 }
 
+.four-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
 .center-content {
   text-align: center;
   margin: 2rem 0;
@@ -341,7 +347,8 @@ section.alt {
   }
 
   .two-column,
-  .three-column {
+  .three-column,
+  .four-column {
     grid-template-columns: 1fr;
   }
 
